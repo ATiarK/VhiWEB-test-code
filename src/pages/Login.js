@@ -2,8 +2,9 @@ import Form from "../components/Form";
 import "../styles/layout.scss";
 
 function Login() {
+  document.title = "Login Page";
   return (
-    <main>
+    <main className="center-content">
       <div className="border-form">
         <Form />
       </div>

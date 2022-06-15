@@ -1,7 +1,14 @@
 main {
   height: 100vh;
-  width: max-content;
   overflow: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.center-content {
+  width: max-content;
   margin: 4rem auto;
 }
 

@@ -1,7 +1,6 @@
-import "../styles/button.scss"
+import { Button } from "@mui/material";
+import "../styles/button.scss";
 
-export default function Button() {
-  return (
-    <button>Click Here</button>
-  )
+export default function CustomButton({ children }) {
+  return <Button variant="contained">{children}</Button>;
 }

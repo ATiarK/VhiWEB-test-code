@@ -1,10 +1,12 @@
-import Button from "../components/Button";
+import Form from "../components/Form";
+import "../styles/layout.scss";
 
 function Login() {
   return (
-    <main className="">
-      <h1 className="">Hello</h1>
-      <Button />
+    <main>
+      <div className="border-form">
+        <Form />
+      </div>
     </main>
   );
 }

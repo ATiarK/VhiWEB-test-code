@@ -2,7 +2,8 @@ import { Typography, Box, TextField } from "@mui/material";
 import CustomButton from "./Button";
 import LoginIcon from "@mui/icons-material/Login";
 
-export default function Form() {
+export default function Form(props) {
+  const { email, setEmail, password, setPassword, onSubmit } = props;
   return (
     <Box
       component="form"
@@ -30,14 +31,24 @@ export default function Form() {
           Login
         </Typography>
       </Box>
-      <TextField id="email" label="Email" variant="outlined" size="small" />
+      <TextField
+        id="email"
+        label="Email"
+        variant="outlined"
+        size="small"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
       <TextField
         id="password"
         label="Password"
         variant="outlined"
         size="small"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
-      <CustomButton>Login</CustomButton>
+      <CustomButton onClick={onSubmit}>Login</CustomButton>
     </Box>
   );
 }

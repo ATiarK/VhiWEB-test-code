@@ -15,8 +15,8 @@ export function submitThis(email, password, navigate) {
 }
 
 export function getList(setUsers) {
-  return () => {
-    axios.get(`${API}/users`).then((res) => {
+  return async () => {
+    await axios.get(`${API}/users`).then((res) => {
       setUsers(res.data.data);
     });
   };

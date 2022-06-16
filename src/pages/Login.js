@@ -15,8 +15,9 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitThis(email, password);
-    navigate("/users");
+    if (email && password) {
+      submitThis(email, password, navigate);
+    }
   };
 
   return (

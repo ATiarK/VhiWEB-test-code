@@ -2,8 +2,9 @@ import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getList } from "../API/api";
 import CustomButton from "../components/Button";
-import Card from "../components/Card";
+import ListUserAvatar from "../components/List";
 import { useNavigate } from "react-router-dom";
+import "../styles/button.scss";
 
 export default function ListUser() {
   document.title = "List User";
@@ -23,18 +24,25 @@ export default function ListUser() {
 
   return (
     <main>
-      <Container sx={{ width: "max-content" }}>
+      <Container
+        sx={{
+          width: "max-content",
+          backgroundColor: "white",
+          borderRadius: "10px",
+        }}
+      >
         <h1>List User</h1>
         {users.map((user) => (
-          <Card
+          <ListUserAvatar
             key={user.id}
             avatar={user.avatar}
             first_name={user.first_name}
             last_name={user.last_name}
             email={user.email}
+            onClick={() => navigate(`/users/${user.id}`)}
           />
         ))}
-        <div style={{ marginTop: "20px" }}>
+        <div className="button-spacing">
           <CustomButton onClick={logout}>Logout</CustomButton>
         </div>
       </Container>
